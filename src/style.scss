@@ -1,0 +1,158 @@
+$bg-color: #0a192f;
+$white: #e6f1ff;
+$green: #64ffda;
+
+body {
+  background: $bg-color;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: $green;
+}
+#load-screen {
+  position: absolute;
+  background: $bg-color;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#end-screen {
+  position: absolute;
+  background: $bg-color;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    padding: 10px;
+  }
+}
+#base-screen {
+  position: absolute;
+  background: $bg-color;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    font-size: 50px;
+  }
+  #score-one, #score-two, #score-three {
+    font-weight: bold;
+    padding: 0;
+    margin: 15px;
+  }
+  #score-one {
+    font-size: 28px;
+    color: gold;
+  }
+  #score-two {
+    font-size: 24px;
+    color: silver;
+  }
+  #score-three {
+    font-size: 20px;
+    color: orange;
+  }
+}
+
+#game-screen {
+  z-index: 0;
+  display: none;
+}
+
+button {
+  padding: 8px 25px;
+  margin-top: 25px;
+  font-size: 24px;
+  font-weight: bold;
+  background: $green;
+  border-radius: 5px;
+  border: 0;
+  color: $bg-color;
+  cursor: pointer;
+  transition: box-shadow 600ms;
+
+  &:hover {
+    box-shadow: 0 0 10px $white;
+  }
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .card-box {
+    $this: &;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+		grid-auto-rows: 100px;
+		grid-gap: 20px;
+    padding: 0 20px;
+    
+    &.disable-event {
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(black, .3);
+      transform: rotateY(180deg);
+      transition: all 400ms;
+
+      img {
+        transition: all 200ms;
+        transition-delay: 50ms;
+        opacity: 0;
+      }
+
+      &.flipped {
+        background: #8892b081;
+        transform: rotateY(0deg);
+
+        img {
+          opacity: 1;
+        }
+      }
+  
+      &.match {
+        background: $green;
+        transform: rotateY(0deg);
+        transform: scale(.9);
+        pointer-events: none;
+
+        img {
+          opacity: 1;
+          transform: rotateY(0deg);
+        }
+      }
+    }
+  }
+}

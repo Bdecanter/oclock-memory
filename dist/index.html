@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memory Game - O'Clock</title>
+  </head>
+  <body>
+    <div id="load-screen">
+      <h1>Loading...</h1>
+    </div>
+    <div id="base-screen">
+      <h1>Memory Game</h1>
+      <div>
+        <p id="score-one">Best</p>
+        <p id="score-two">Best</p>
+        <p id="score-three">Best</p>
+      </div>
+      <button id="start">Start</button>
+    </div>
+    <div id="game-screen">
+      <h1>Play !</h1>
+      <div id="app">
+        <div class="card-box">
+          <div data-value="1" class="card"><img src="./assets/1.png" alt=""/></div>
+          <div data-value="1" class="card"><img src="./assets/1.png" alt=""/></div>
+          <div data-value="2" class="card"><img src="./assets/2.png" alt=""/></div>
+          <div data-value="2" class="card"><img src="./assets/2.png" alt=""/></div>
+          <div data-value="3" class="card"><img src="./assets/3.png" alt=""/></div>
+          <div data-value="3" class="card"><img src="./assets/3.png" alt=""/></div>
+          <div data-value="4" class="card"><img src="./assets/4.png" alt=""/></div>
+          <div data-value="4" class="card"><img src="./assets/4.png" alt=""/></div>
+          <div data-value="5" class="card"><img src="./assets/5.png" alt=""/></div>
+          <div data-value="5" class="card"><img src="./assets/5.png" alt=""/></div>
+          <div data-value="6" class="card"><img src="./assets/6.png" alt=""/></div>
+          <div data-value="6" class="card"><img src="./assets/6.png" alt=""/></div>
+          <div data-value="7" class="card"><img src="./assets/7.png" alt=""/></div>
+          <div data-value="7" class="card"><img src="./assets/7.png" alt=""/></div>
+          <div data-value="8" class="card"><img src="./assets/8.png" alt=""/></div>
+          <div data-value="8" class="card"><img src="./assets/8.png" alt=""/></div>
+          <div data-value="9" class="card"><img src="./assets/9.png" alt=""/></div>
+          <div data-value="9" class="card"><img src="./assets/9.png" alt=""/></div>
+          <div data-value="10" class="card"><img src="./assets/10.png" alt=""/></div>
+          <div data-value="10" class="card"><img src="./assets/10.png" alt=""/></div>
+        </div>
+      </div>
+      <h2>Timer: <span id="time-span">0</span> sec.</h2>
+    </div>
+    <div id="end-screen">
+      <h1>Score: <span id="score-final">33</span> sec. </h1>
+      <h2>Enter your name :</h2>
+      <input id="playername" type="text" maxlength="20"/>
+      <button id="send-score-btn">Send my score</button>
+    </div>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
